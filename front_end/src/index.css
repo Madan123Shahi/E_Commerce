@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.green-placeholder::placeholder {
+  color: green; /* Green color */
+  opacity: 1; /* Ensure full visibility */
+}

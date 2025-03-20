@@ -23,9 +23,9 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-gray-50 w-full  font-sans">
+    <div className=" sticky top-0 z-50 bg-blue-500 w-full font-sans shadow-md">
       {/* First Div: Logo, Search Bar, Login, Cart */}
-      <div className="flex justify-between items-center px-4 py-3 bg-white shadow-sm gap-4 ">
+      <div className="flex justify-between items-center px-4 py-3 gap-4 border-b border-gray-300">
         {/* Logo */}
         <div>
           <img
@@ -38,19 +38,20 @@ const Navbar = () => {
         </div>
 
         {/* Search Bar */}
-        <div className="hidden md:flex gap-2 w-full max-w-xl bg-gray-100 px-4 py-2 rounded-md border border-gray-300 shadow-inner">
-          <a href="#">
-            <FontAwesomeIcon icon={faSearch} className="text-gray-500" />
-          </a>
+        <div className="hidden md:flex gap-2 w-full max-w-xl bg-white px-4 py-2 rounded-md border border-gray-300 shadow-inner text-gray-500 items-center ">
+          <FontAwesomeIcon icon={faSearch} className=" text-gray-500" />
+
           <input
             type="text"
             placeholder="Search for Products Brands and More..."
-            className=" flex-1 outline-none bg-transparent text-lg font-medium "
+            className="flex-1 outline-none bg-transparent text-lg font-medium placeholder-gray-400"
           />
         </div>
-        <div className="flex items-center gap-20 text-lg font-medium text-gray-500 cursor-pointer  ">
+
+        {/* Login, Signup, Cart */}
+        <div className="flex items-center gap-20 text-lg font-medium text-white cursor-pointer">
           {/* Login */}
-          <div className="flex gap-1 items-center hover:text-blue-500 ">
+          <div className="flex gap-1 items-center hover:text-orange-500 transition-colors duration-200">
             <FontAwesomeIcon
               icon={faCircleUser}
               onClick={() => navigate("/login")}
@@ -64,12 +65,11 @@ const Navbar = () => {
           </div>
 
           {/* Signup */}
-          <div className="flex gap-1 items-center hover:text-blue-500 ">
+          <div className="flex gap-1 items-center hover:text-orange-500 transition-colors duration-200">
             <FontAwesomeIcon
               icon={faUserPlus}
               onClick={() => navigate("/signup")}
             />
-
             <span
               className="hidden sm:inline"
               onClick={() => navigate("/signup")}
@@ -79,12 +79,11 @@ const Navbar = () => {
           </div>
 
           {/* Cart */}
-          <div className="flex gap-1 items-center hover:text-blue-500 ">
+          <div className="flex gap-1 items-center hover:text-orange-500 transition-colors duration-200">
             <FontAwesomeIcon
               icon={faShoppingCart}
               onClick={() => navigate("/cart")}
             />
-
             <span
               className="hidden md:inline"
               onClick={() => navigate("/cart")}
@@ -94,13 +93,13 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {/* <hr className="h-2 bg-gray-400 border-none" /> */}
+
       {/* Second Div: Product Categories */}
-      <div className="flex justify-between items-center px-4 py-4 gap-6 md:px-4 md:py-3 md:gap-4">
+      <div className="flex justify-between items-center px-4 py-4 gap-6 md:px-4 md:py-3 md:gap-4 bg-blue-500 text-white">
         {categories.map((category, index) => (
           <span
             key={index}
-            className="text-lg font-semibold text-gray-500 hover:text-blue-500 cursor-pointer transition-colors duration-200 whitespace-nowrap"
+            className="text-lg font-semibold hover:text-orange-500 cursor-pointer transition-colors duration-200 whitespace-nowrap"
           >
             {category}
           </span>
