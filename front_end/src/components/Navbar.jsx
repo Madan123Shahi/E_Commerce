@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <div className=" sticky top-0 z-50 bg-blue-500 w-full font-sans shadow-md">
       {/* First Div: Logo, Search Bar, Login, Cart */}
-      <div className="flex justify-between items-center px-4 py-3 gap-4 border-b border-gray-300">
+      <div className="flex justify-between items-center px-4 py-3 gap-4">
         {/* Logo */}
         <div>
           <img
