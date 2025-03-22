@@ -37,15 +37,25 @@ const LoginPage = () => {
           />
         </div>
         {/* div for Remember me check box along with forgot password */}
-        <div className="flex space-x-32 ">
-          <div className="flex gap-1">
-            <label>Remember Me</label>
-            <input type="checkbox" className="appearance-none w-2 h-2" />
+        <div className="flex justify-between w-full">
+          <div className="flex gap-1 items-center">
+            <label className="text-base text-white font-bold ">
+              Remember Me
+            </label>
+            <input type="checkbox" />
           </div>
-          <span>Forgot Password</span>
+          <span className="text-white font-bold text-base">
+            Forgot Password
+          </span>
         </div>
         {/* div for Login Button */}
-        <div>Login</div>
+        <div className="w-full bg-white text-center p-2 rounded-lg text-gray-500 text-lg cursor-pointer">
+          Login
+        </div>
+        <div className="text-white font-bold cursor-pointer">
+          New to Flipkart? Create an account
+        </div>
+        <div>{/* Footer */}</div>
       </div>
     </div>
   );
