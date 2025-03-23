@@ -95,7 +95,7 @@ const Navbar = () => {
       </div>
 
       {/* Second Div: Product Categories */}
-      <div className="flex justify-between items-center px-4 py-4 gap-6 md:px-4 md:py-3 md:gap-4 bg-blue-500 text-white">
+      <div className="flex justify-between items-center px-4 py-4 gap-12 md:px-4 md:py-3 md:gap-4 bg-blue-500 text-white">
         {categories.map((category, index) => (
           <span
             key={index}
