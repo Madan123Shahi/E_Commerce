@@ -24,8 +24,10 @@ const SignUp = () => {
         {/* Div for Sign Up Form */}
 
         <form>
-          <fieldset className="border border-gray-300 p-6 space-y-5">
-            <legend className="text-2xl font-medium">Create Account</legend>
+          <fieldset className=" border-4  border-blue-500 p-6 space-y-5 ">
+            <legend className="text-center text-2xl font-medium">
+              Create Account
+            </legend>
 
             <div className="flex flex-col">
               <label htmlFor="name" className="text-gray-900 font-medium mb-1">
@@ -35,7 +37,7 @@ const SignUp = () => {
                 type="text"
                 placeholder="First And Last Name"
                 className=" pl-3 py-2
-                 border border-gray-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded caret-transparent text-gray-900"
+                 border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded caret-transparent text-gray-900"
               />
             </div>
 
@@ -47,7 +49,7 @@ const SignUp = () => {
                 type="text"
                 placeholder="Mobile Number Or Email"
                 className=" pl-3 py-2
-                 border border-gray-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded caret-transparent text-gray-900"
+                 border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded caret-transparent text-gray-900"
               />
             </div>
             <div className="flex flex-col">
@@ -58,7 +60,7 @@ const SignUp = () => {
                 type="text"
                 placeholder="At Least 6 Characters"
                 className=" pl-3 py-2
-                 border border-gray-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded caret-transparent text-gray-900"
+                 border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded caret-transparent text-gray-900"
               />
               <p className="mt-2 text-blue-500">
                 <FontAwesomeIcon icon={faEyeSlash} className="mr-2" />
@@ -72,7 +74,7 @@ const SignUp = () => {
               <input
                 type="text"
                 className=" pl-3 py-2
-                 border border-gray-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded caret-transparent text-gray-900"
+                 border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded caret-transparent text-gray-900"
               />
             </div>
             <div className="flex justify-center bg-blue-500 rounded-full p-2">
@@ -97,7 +99,10 @@ const SignUp = () => {
             </div>
             <div>
               Already have an account?{" "}
-              <span className="text-blue-500 cursor-pointer">
+              <span
+                className="text-blue-500 cursor-pointer"
+                onClick={() => navigate("/login")}
+              >
                 Sign in {">"}
               </span>
             </div>
