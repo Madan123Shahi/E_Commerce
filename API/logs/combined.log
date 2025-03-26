@@ -42,3 +42,14 @@
 2025-03-11 03:14:13 [INFO]: Server is Connected Successfully at PORT 8000
 2025-03-11 03:14:19 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
 2025-03-11 03:14:19 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-26 21:26:07 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-26 21:26:07 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-26 21:26:23 [INFO]: ::1 - - [26/Mar/2025:15:56:23 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0"
+2025-03-26 22:43:32 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-26 22:43:32 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-26 22:46:14 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-26 22:46:14 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-26 22:46:40 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-26 22:46:40 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-26 22:47:21 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-26 22:47:21 [INFO]: Server is Connected Successfully at PORT 8000

@@ -5,7 +5,8 @@ const { cleanEnv, str, port } = require("envalid");
 const morgan = require("morgan");
 const connectDB = require("./DB/connectDB");
 const logger = require("./middlewares/logger");
-
+const userRoute = require("./routes/userRoutes");
+const cors = require("cors");
 const env = cleanEnv(process.env, {
   PORT: port({ default: 5000 }),
   MONGO_URI: str({ desc: "MongoDB Connection URI" }),
@@ -22,6 +23,12 @@ app.use(
     },
   })
 );
+
+app.use(express.json());
+app.use(cors());
+
+// Routes
+app.use("/api/user", userRoute);
 
 const start = async () => {
   try {

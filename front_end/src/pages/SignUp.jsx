@@ -7,6 +7,15 @@ const SignUp = () => {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
+    const name = e.target.name.value;
+    const contact = e.target.contact.value;
+    const password = e.target.password.value;
+    const confirmPassword = e.target.confirmPassword.value;
+
+    if (password !== confirmPassword) {
+      alert("Password do not match");
+    }
+
     navigate("/login");
   };
   return (
@@ -80,12 +89,12 @@ const SignUp = () => {
                 id="password"
                 name="password"
                 type="password"
-                placeholder="At Least 6 Characters"
+                placeholder="At Least 8 Characters"
                 className=" pl-3 py-2
                  border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded caret-transparent text-gray-900
                  "
                 required
-                minLength="12"
+                minLength="8"
                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$"
                 title="Password should have at least one uppercase, one lowercase, one digit and one specail character"
               />
@@ -108,7 +117,7 @@ const SignUp = () => {
                 className=" pl-3 py-2
                  border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded caret-transparent text-gray-900"
                 required
-                minLength="12"
+                minLength="8"
                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$"
                 title="Password should have at least one uppercase, one lowercase, one digit and one specail character"
               />
