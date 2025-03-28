@@ -1,13 +1,14 @@
-const { register } = "../controllers/users.js";
 const express = require("express");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
+const register = require("../controllers/users.js");
 
-router.post("/register"),
+router.post(
+  "/register",
   [
     body("name")
       .trim()
-      .isEmpty()
+      .notEmpty()
       .withMessage("Name is required")
       .isLength({ min: 2 })
       .withMessage("Name must be atleast 2 characters long"),
@@ -36,13 +37,14 @@ router.post("/register"),
       .matches(/[!@#$%^&*]/)
       .withMessage("Password must contain atleast one specail character"),
   ],
-  (req, res) => {
+  (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      res.status(400).json({ message: errors.array()[0].msg });
+      return res.status(400).json({ message: errors.array()[0].msg });
     }
     // if no errors pass controll to the register controller
-    register(req, res);
-  };
+    register(req, res, next);
+  }
+);
 
 module.exports = router;

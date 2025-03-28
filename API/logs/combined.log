@@ -55,3 +55,88 @@
 2025-03-26 22:47:21 [INFO]: Server is Connected Successfully at PORT 8000
 2025-03-27 16:13:24 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
 2025-03-27 16:13:24 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 16:30:36 [INFO]: ::ffff:192.168.204.75 - - [28/Mar/2025:11:00:36 +0000] "GET / HTTP/1.1" 404 139 "-" "Avast Antivirus"
+2025-03-28 16:30:40 [INFO]: ::ffff:192.168.204.75 - - [28/Mar/2025:11:00:40 +0000] "GET / HTTP/1.1" 404 139 "-" "-"
+2025-03-28 16:30:40 [INFO]: ::ffff:192.168.204.75 - - [28/Mar/2025:11:00:40 +0000] "GET /loginMsg.js HTTP/1.1" 404 150 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+2025-03-28 16:30:40 [INFO]: ::ffff:192.168.204.75 - - [28/Mar/2025:11:00:40 +0000] "GET /cgi/get.cgi?cmd=home_login HTTP/1.1" 404 150 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+2025-03-28 18:26:19 [INFO]: ::ffff:192.168.204.75 - - [28/Mar/2025:12:56:19 +0000] "GET / HTTP/1.1" 404 139 "-" "Avast Antivirus"
+2025-03-28 18:26:23 [INFO]: ::ffff:192.168.204.75 - - [28/Mar/2025:12:56:23 +0000] "GET / HTTP/1.1" 404 139 "-" "-"
+2025-03-28 18:26:23 [INFO]: ::ffff:192.168.204.75 - - [28/Mar/2025:12:56:23 +0000] "GET /loginMsg.js HTTP/1.1" 404 150 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+2025-03-28 18:26:23 [INFO]: ::ffff:192.168.204.75 - - [28/Mar/2025:12:56:23 +0000] "GET /cgi/get.cgi?cmd=home_login HTTP/1.1" 404 150 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+2025-03-28 20:27:13 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 20:27:13 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:30:10 [INFO]: ::1 - - [28/Mar/2025:18:00:10 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:30:11 [INFO]: ::1 - - [28/Mar/2025:18:00:11 +0000] "POST /api/users/register HTTP/1.1" 404 158 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:31:42 [INFO]: ::1 - - [28/Mar/2025:18:01:42 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:31:42 [INFO]: ::1 - - [28/Mar/2025:18:01:42 +0000] "POST /api/users/register HTTP/1.1" 404 158 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:35:17 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:35:17 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:35:43 [INFO]: ::1 - - [28/Mar/2025:18:05:43 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:35:51 [INFO]: ::1 - - [28/Mar/2025:18:05:51 +0000] "GET /api/users HTTP/1.1" 404 148 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:35:58 [INFO]: ::1 - - [28/Mar/2025:18:05:58 +0000] "GET /api/users/register HTTP/1.1" 404 157 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:38:15 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:38:15 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:38:23 [INFO]: ::1 - - [28/Mar/2025:18:08:23 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:38:23 [INFO]: ::1 - - [28/Mar/2025:18:08:23 +0000] "POST /api/users/register HTTP/1.1" 404 158 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:40:31 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:40:31 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:43:44 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:43:44 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:43:49 [INFO]: ::1 - - [28/Mar/2025:18:13:49 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:43:50 [INFO]: ::1 - - [28/Mar/2025:18:13:50 +0000] "POST /api/users/register HTTP/1.1" 404 158 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:44:49 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:44:49 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:45:08 [INFO]: ::1 - - [28/Mar/2025:18:15:08 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:45:08 [INFO]: ::1 - - [28/Mar/2025:18:15:08 +0000] "POST /api/users/register HTTP/1.1" 404 158 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:46:09 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:46:09 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:46:46 [INFO]: ::1 - - [28/Mar/2025:18:16:46 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:46:46 [INFO]: ::1 - - [28/Mar/2025:18:16:46 +0000] "POST /api/users/register HTTP/1.1" 400 30 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:47:48 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:47:48 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:47:57 [INFO]: ::1 - - [28/Mar/2025:18:17:57 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:47:57 [INFO]: ::1 - - [28/Mar/2025:18:17:57 +0000] "POST /api/users/register HTTP/1.1" 400 30 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:48:43 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:48:43 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:48:48 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:48:48 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:48:56 [INFO]: ::1 - - [28/Mar/2025:18:18:56 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:48:56 [INFO]: ::1 - - [28/Mar/2025:18:18:56 +0000] "POST /api/users/register HTTP/1.1" 400 30 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:48:56 [ERROR]: Unhandled Rejection: Cannot set headers after they are sent to the client
+2025-03-28 23:49:42 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:49:42 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:49:51 [INFO]: ::1 - - [28/Mar/2025:18:19:51 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:49:51 [INFO]: ::1 - - [28/Mar/2025:18:19:51 +0000] "POST /api/users/register HTTP/1.1" 400 30 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:49:52 [ERROR]: Unhandled Rejection: Cannot set headers after they are sent to the client
+2025-03-28 23:51:22 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:51:22 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:51:39 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:51:39 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:52:20 [INFO]: ::1 - - [28/Mar/2025:18:22:20 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:52:20 [INFO]: ::1 - - [28/Mar/2025:18:22:20 +0000] "POST /api/users/register HTTP/1.1" 400 30 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:58:14 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-28 23:58:14 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-28 23:58:31 [INFO]: ::1 - - [28/Mar/2025:18:28:31 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-28 23:58:31 [INFO]: ::1 - - [28/Mar/2025:18:28:31 +0000] "POST /api/users/register HTTP/1.1" 500 26 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-29 00:03:04 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-29 00:03:04 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-29 00:04:15 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-29 00:04:15 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-29 00:05:01 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-29 00:05:01 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-29 00:05:50 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-29 00:05:50 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-29 00:07:47 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-29 00:07:47 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-29 00:08:29 [INFO]: ::1 - - [28/Mar/2025:18:38:29 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-29 00:08:29 [INFO]: ::1 - - [28/Mar/2025:18:38:29 +0000] "POST /api/users/register HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-29 00:11:10 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-29 00:11:10 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-29 00:12:00 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-03-29 00:12:00 [INFO]: Server is Connected Successfully at PORT 8000
+2025-03-29 00:12:49 [INFO]: ::1 - - [28/Mar/2025:18:42:49 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-29 00:12:49 [INFO]: ::1 - - [28/Mar/2025:18:42:49 +0000] "POST /api/users/register HTTP/1.1" 201 219 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-29 00:13:19 [INFO]: ::1 - - [28/Mar/2025:18:43:19 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-29 00:13:19 [INFO]: ::1 - - [28/Mar/2025:18:43:19 +0000] "POST /api/users/register HTTP/1.1" 201 216 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-29 00:14:24 [INFO]: ::1 - - [28/Mar/2025:18:44:24 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-03-29 00:14:24 [INFO]: ::1 - - [28/Mar/2025:18:44:24 +0000] "POST /api/users/register HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"

@@ -6,18 +6,31 @@ const register = async (req, res) => {
     // First we will check if the customer already exists or not via unique contact info
     const userExists = await User.findOne({ contact });
     if (userExists)
-      res
-        .status(400)
-        .json({ message: "User already exists with the same email or number" });
+      return res.status(400).json({
+        success: false,
+        message: "User already exists with the same email or number",
+      });
     const user = await User.create({
       name,
       contact,
       password,
     });
-    res.status(201).json({ message: "User Registered" }, { User: user });
+    return res.status(201).json({
+      success: true,
+      message: "User Registered Successfully",
+      user: {
+        id: user._id,
+        name: user.name,
+        contact: user.contact,
+        password: user.password,
+      },
+    });
   } catch (error) {
     console.error("Registration Error", error);
-    res.status(500).json({ message: "Server Error" });
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+    });
   }
 };
 

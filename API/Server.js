@@ -24,11 +24,11 @@ app.use(
   })
 );
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 
 // Routes
-app.use("/api/user", userRoute);
+app.use("/api/users", userRoute);
 
 const start = async () => {
   try {

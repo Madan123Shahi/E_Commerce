@@ -1,15 +1,122 @@
 import logo from "../images/logo.jpg";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import { faEyeSlash, faEye } from "@fortawesome/free-regular-svg-icons";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [confirmShowPassword, setConfirmShowPassword] = useState(false);
+  const [disabledButton, setDisabledButton] = useState(true);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (e) => {
+  // RegExp Initialization
+  const contactRegexp = /^(\+\d{1,3}[- ]?)?\d{10}$|^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegexp =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+
+  useEffect(() => {
+    let errors = {};
+
+    // Name Validation
+    if (!name.trim()) {
+      errors.name = "Name is required";
+    } else if (name.trim().length < 2) {
+      errors.name = "Name must be at least 2 characters";
+    }
+
+    // Contact validation
+    if (!contact.trim()) {
+      errors.contact = "Mobile Number or Email is required";
+    } else if (!contactRegexp.test(contact)) {
+      errors.contact = "Please enter a valid email or mobile number";
+    }
+
+    // Password Validation
+    if (!password) {
+      errors.password = "Password is required";
+    } else if (password.length < 8) {
+      errors.password = "Password must be at least 8 characters";
+    } else if (!passwordRegexp.test(password)) {
+      errors.password =
+        "Password must contain uppercase, lowercase, number, and special character";
+    }
+
+    // Confirm Password Validation
+    if (!confirmPassword) {
+      errors.confirmPassword = "Please confirm your password";
+    } else if (password !== confirmPassword) {
+      errors.confirmPassword = "Passwords do not match";
+    }
+
+    setFormErrors(errors);
+    setDisabledButton(Object.keys(errors).length > 0 || isSubmitting);
+  }, [name, contact, password, confirmPassword, isSubmitting]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Form is valid, proceed with submission
-    navigate("/login");
+    setSubmitError("");
+
+    if (Object.keys(formErrors).length === 0) {
+      setIsSubmitting(true);
+
+      try {
+        const userData = {
+          name,
+          contact,
+          password,
+        };
+
+        // Adjust the API endpoint as per your backend
+        const response = await axios.post(
+          "http://localhost:5000/api/users/register",
+          userData,
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (response.data.success) {
+          console.log("Registration successful", response.data);
+          // Redirect to login or verification page
+          navigate("/login", { state: { registrationSuccess: true } });
+        } else {
+          setSubmitError(response.data.message || "Registration failed");
+        }
+      } catch (error) {
+        console.error("Registration error:", error);
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          setSubmitError(error.response.data.message || "Registration failed");
+        } else if (error.request) {
+          // The request was made but no response was received
+          setSubmitError("No response from server. Please try again.");
+        } else {
+          // Something happened in setting up the request
+          setSubmitError("Registration failed. Please try again.");
+        }
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setConfirmShowPassword(!confirmShowPassword);
   };
 
   return (
@@ -25,8 +132,18 @@ const SignUp = () => {
             alt="Company Logo"
           />
         </div>
-        {/* Div for Sign Up Form */}
 
+        {/* Display submission error if any */}
+        {submitError && (
+          <div
+            className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+            role="alert"
+          >
+            <span className="block sm:inline">{submitError}</span>
+          </div>
+        )}
+
+        {/* Div for Sign Up Form */}
         <form onSubmit={handleSubmit}>
           <fieldset className="border-4 border-blue-500 p-6 space-y-5">
             <legend className="text-center text-2xl font-medium">
@@ -41,13 +158,22 @@ const SignUp = () => {
                 id="name"
                 name="name"
                 type="text"
+                autoComplete="name"
                 placeholder="First And Last Name"
                 className="pl-3 py-2 border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded text-gray-900"
                 required
                 minLength="2"
                 pattern="[A-Za-z ]+"
                 title="Please enter your full name (letters and spaces only)"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                disabled={isSubmitting}
               />
+              {formErrors.name && (
+                <p className="text-red-500 text-base font-medium mt-1">
+                  {formErrors.name}
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col">
@@ -61,12 +187,20 @@ const SignUp = () => {
                 id="contact"
                 name="contact"
                 type="text"
+                autoComplete="username"
                 placeholder="Mobile Number Or Email"
                 className="pl-3 py-2 border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded text-gray-900"
                 required
-                pattern="^(\+\d{1,3}[- ]?)?\d{10}$|^[^\s@]+@[^\s@]+\.[^\s@]+$"
                 title="Please enter a valid mobile number or email address"
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
+                disabled={isSubmitting}
               />
+              {formErrors.contact && (
+                <p className="text-red-500 text-base font-medium mt-1">
+                  {formErrors.contact}
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col">
@@ -76,19 +210,41 @@ const SignUp = () => {
               >
                 Password
               </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                placeholder="At Least 6 Characters"
-                className="pl-3 py-2 border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded text-gray-900"
-                required
-                minLength="6"
-              />
-              <p className="mt-2 text-blue-500">
-                <FontAwesomeIcon icon={faEyeSlash} className="mr-2" />
-                Passwords must be at least 6 characters.
-              </p>
+              <div className="relative">
+                <input
+                  id="password"
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  autoComplete="new-password"
+                  placeholder="At Least 8 Characters"
+                  className="w-full pl-3 py-2 border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded text-gray-900"
+                  required
+                  minLength="8"
+                  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$"
+                  title="Password should have at least one uppercase, one lowercase, one digit and one special character"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  disabled={isSubmitting}
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-3 text-gray-500"
+                  onClick={togglePasswordVisibility}
+                  disabled={isSubmitting}
+                >
+                  <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+                </button>
+              </div>
+              {formErrors.password ? (
+                <p className="text-red-500 text-base font-medium mt-1">
+                  {formErrors.password}
+                </p>
+              ) : (
+                <p className="mt-2 text-blue-500 text-sm">
+                  <FontAwesomeIcon icon={faEyeSlash} className="mr-2" />
+                  Passwords must be at least 8 characters.
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col">
@@ -98,39 +254,70 @@ const SignUp = () => {
               >
                 Re-enter Password
               </label>
-              <input
-                id="confirmPassword"
-                name="confirmPassword"
-                type="password"
-                className="pl-3 py-2 border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded text-gray-900"
-                required
-                minLength="6"
-              />
-            </div>
-
-            <div className="flex justify-center bg-blue-500 rounded-full p-2">
-              <button type="submit" className="text-white font-bold text-xl">
-                Continue
-              </button>
+              <div className="relative">
+                <input
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  type={confirmShowPassword ? "text" : "password"}
+                  autoComplete="new-password"
+                  className="w-full pl-3 py-2 border-2 border-blue-500 outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2 rounded text-gray-900"
+                  required
+                  minLength="8"
+                  pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$"
+                  title="Password should have at least one uppercase, one lowercase, one digit and one special character"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  disabled={isSubmitting}
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-3 text-gray-500"
+                  onClick={toggleConfirmPasswordVisibility}
+                  disabled={isSubmitting}
+                >
+                  <FontAwesomeIcon
+                    icon={confirmShowPassword ? faEyeSlash : faEye}
+                  />
+                </button>
+              </div>
+              {formErrors.confirmPassword && (
+                <p className="text-red-500 text-base font-medium mt-1">
+                  {formErrors.confirmPassword}
+                </p>
+              )}
             </div>
 
             <div>
+              <button
+                type="submit"
+                disabled={disabledButton}
+                className={`w-full py-2 text-white font-bold text-xl rounded ${
+                  disabledButton
+                    ? "bg-red-500 cursor-not-allowed"
+                    : "bg-blue-500 hover:bg-blue-600"
+                } ${isSubmitting ? "opacity-75" : ""}`}
+              >
+                {isSubmitting ? "Processing..." : "Continue"}
+              </button>
+            </div>
+
+            <div className="text-sm">
               By creating an account, you agree to PBSSMK's{" "}
-              <span className="text-blue-500 underline cursor-pointer">
+              <span className="text-blue-500 underline cursor-pointer hover:text-blue-700">
                 Conditions of Use
               </span>{" "}
               and{" "}
-              <span className="text-blue-500 underline cursor-pointer">
+              <span className="text-blue-500 underline cursor-pointer hover:text-blue-700">
                 Privacy Notice
               </span>
               .
             </div>
 
-            <div>
+            <div className="text-sm">
               Already have an account?{" "}
               <span
-                className="text-blue-500 cursor-pointer"
-                onClick={() => navigate("/login")}
+                className="text-blue-500 cursor-pointer hover:text-blue-700 hover:underline"
+                onClick={() => !isSubmitting && navigate("/login")}
               >
                 Sign in {">"}
               </span>
