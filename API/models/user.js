@@ -19,6 +19,12 @@ const userSchema = new mongoose.Schema(
       required: [true, "Password is required"],
       minlength: [8, "Password must be 8 character long"],
     },
+    isVerified: {
+      type: Boolean,
+      default: false,
+    },
+    otp: String,
+    otpExpiry: Date,
   },
   {
     timestamps: true,
@@ -31,6 +37,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-userSchema.index({ contact: 1 }, { unique: true });
+// don't need it if we are using unique true while defining schema
+// userSchema.index({ contact: 1 }, { unique: true });
 
 module.exports = mongoose.model("User", userSchema);

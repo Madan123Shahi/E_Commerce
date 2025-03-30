@@ -1,2 +1,8 @@
 2025-03-28 23:48:56 [ERROR]: Unhandled Rejection: Cannot set headers after they are sent to the client
 2025-03-28 23:49:52 [ERROR]: Unhandled Rejection: Cannot set headers after they are sent to the client
+2025-03-30 06:03:31 [ERROR]: Unhandled Rejection: A 'From' or 'MessagingServiceSid' parameter is required to send a message
+2025-03-30 06:08:33 [ERROR]: Unhandled Rejection: A 'From' or 'MessagingServiceSid' parameter is required to send a message
+2025-03-30 06:16:17 [ERROR]: Unhandled Rejection: A 'From' or 'MessagingServiceSid' parameter is required to send a message
+2025-03-30 06:18:34 [ERROR]: Unhandled Rejection: A 'From' or 'MessagingServiceSid' parameter is required to send a message
+2025-03-30 06:28:10 [ERROR]: Unhandled Rejection: Permission to send an SMS has not been enabled for the region indicated by the 'To' number: 780749XXXX
+2025-03-30 08:15:18 [ERROR]: Unhandled Rejection: Cannot read properties of undefined (reading 'get')

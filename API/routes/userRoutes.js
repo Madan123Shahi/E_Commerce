@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
 const register = require("../controllers/users.js");
-
+const verifyUser = require("../controllers/verifyUser");
 router.post(
   "/register",
   [
@@ -46,5 +46,5 @@ router.post(
     register(req, res, next);
   }
 );
-
+router.post("/verify", verifyUser);
 module.exports = router;

@@ -74,7 +74,6 @@ const SignUp = () => {
           contact,
           password,
         };
-
         // API End Point
         const response = await axios.post(
           "http://localhost:8000/api/users/register",
@@ -85,8 +84,15 @@ const SignUp = () => {
             },
           }
         );
+
         if (response.data.success) {
           console.log("Registration Successfull", response.data);
+          // alert("User registered successfully");
+          // setTimeout(() => {
+          //   navigate("/login", {
+          //     state: { registrationSuccess: true },
+          //   });
+          // }, 1000); // Delay navigation by 1 second
           navigate("/login", {
             state: {
               registrationSuccess: true,
