@@ -4,7 +4,8 @@ require("dotenv").config();
 const { cleanEnv, str, port } = require("envalid");
 const morgan = require("morgan");
 const connectDB = require("./DB/connectDB");
-const logger = require("./middlewares/logger");
+const errorHandler = require("./middlewares/errorHandler");
+const logger = require("./utils/logger");
 const userRoute = require("./routes/userRoutes");
 const cors = require("cors");
 const env = cleanEnv(process.env, {
@@ -30,6 +31,7 @@ app.use(express.json());
 // Routes
 app.use("/api/users", userRoute);
 
+app.use(errorHandler);
 const start = async () => {
   try {
     await connectDB(MONGO_URI);

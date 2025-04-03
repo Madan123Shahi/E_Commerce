@@ -23,8 +23,9 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    otp: String,
-    otpExpiry: Date,
+    // otp: String,
+    // otpExpiry: Date,
+    // B'cause OTP is being stored in JWT
   },
   {
     timestamps: true,

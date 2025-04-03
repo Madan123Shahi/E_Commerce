@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
-const register = require("../controllers/users.js");
-const verifyUser = require("../controllers/verifyUser");
+const { register, verifyUser } = require("../controllers/users.js");
+const logger = require("../utils/logger");
+
 router.post(
   "/register",
   [
@@ -40,11 +41,22 @@ router.post(
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ message: errors.array()[0].msg });
+      const errorMessage = errors.array()[0].msg;
+      logger.warn(`Validation failed for /register:${errorMessage}`);
+      return res.status(400).json({ message: errorMessage });
     }
     // if no errors pass controll to the register controller
+    logger.info(`Incoming /regitser request for ${req.body.contact}`);
     register(req, res, next);
   }
 );
-router.post("/verify", verifyUser);
+router.post("/verify", (req, res, next) => {
+  logger.info(
+    `Incoming /verify request with token starting:${req.body.token?.slice(
+      0,
+      10
+    )}...`
+  );
+  verifyUser(req, res, next);
+});
 module.exports = router;

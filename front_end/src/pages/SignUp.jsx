@@ -1,9 +1,30 @@
 import logo from "../images/logo.jpg";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEyeSlash, faEye } from "@fortawesome/free-regular-svg-icons";
+import {
+  faEyeSlash,
+  faEye,
+  faSpinner,
+} from "@fortawesome/free-regular-svg-icons";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { initializeApp } from "firebase/app";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+// Firebase Config
+const firebaseConfig = {
+  apiKey: "AIzaSyC87LIcmYUrUGOPKCV8p-PPeFqa-Fzul4E",
+  authDomain: "e-commerce8894.firebaseapp.com",
+  projectId: "e-commerce8894",
+  storageBucket: "e-commerce8894.firebasestorage.app",
+  messagingSenderId: "1032731499693",
+  appId: "1:1032731499693:web:40886150c4caf1f80f3a24",
+  // measurementId: "G-2CFYMS0K7T",
+};
+
+initializeApp(firebaseConfig);
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -17,11 +38,23 @@ const SignUp = () => {
   const [formErrors, setFormErrors] = useState({});
   const [submitted, setSubmitted] = useState("");
   const [submitError, setSubmitError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [acceptTerms, setAcceptTerms] = useState(false);
+  const [passwordStrength, setPasswordStrength] = useState("");
+  const [contactExists, setContactExists] = useState(false);
+  const [checkingContact, setCheckingContact] = useState(false);
+  const [contactChecked, setContactChecked] = userState(false);
+  const [otp, setOtp] = useState("");
+  const [step, setStep] = useState("register");
 
   // RegExp Initialization
   const contactRegexp = /^(\+\d{1,3}[- ]?)?\d{10}$|^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegexp =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/;
+
+  const evaluatePasswordStrength = (pwd) => {
+    pwd < 6 ? "Weak" : !passwordRegexp.test(pwd) ? "Medium" : "Strong";
+  };
 
   useEffect(() => {
     let errors = {};
@@ -29,8 +62,6 @@ const SignUp = () => {
     // Name Validation
     if (!name.trim()) {
       errors.name = "Name is required";
-    } else if (name.trim().length < 2) {
-      errors.name = "Name must be at least 2 characters";
     }
 
     // Contact validation
@@ -57,17 +88,46 @@ const SignUp = () => {
       errors.confirmPassword = "Passwords do not match";
     }
 
+    // Terms
+    if (!acceptTerms) errors.terms = "Accept Terms To continue";
+
     setFormErrors(errors);
     setDisabledButton(Object.keys(errors).length > 0);
   }, [name, contact, password, confirmPassword]);
 
+  useEffect(() => {
+    if (!contact) return;
+    setCheckingContact(true);
+    setContactChecked(false);
+    const delayDebounceFn = setTimeout(() => {
+      async () => {
+        if (!contactRegexp.test(contact)) {
+          setCheckingContact(false);
+        }
+        try {
+          const res = await axios.post(
+            "http://localhost:8000/api/users/check-contact",
+            { contact },
+            setContactExists(res.data.exists),
+            setCheckingContact(true)
+          );
+        } catch {
+          setContactExists(false);
+          setCheckingContact(true);
+        } finally {
+          setCheckingContact(false);
+        }
+      };
+    }, 500);
+    return () => clearTimeout(delayDebounceFn);
+  }, [contact]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitError("");
-    if (Object.keys(formErrors).length === 0) {
-      // console.log("Form Submitted", { name, contact, password });
-      // Here you would typically send the data to your backend
-      setSubmitted(true);
+    setSubmitError(""); // Not in Example Code
+    setLoading(true); //
+    if (Object.keys(formErrors).length === 0 || contactExists) {
+      setSubmitted(true); // Not in Example Code
       try {
         const userData = {
           name,
@@ -86,13 +146,6 @@ const SignUp = () => {
         );
 
         if (response.data.success) {
-          console.log("Registration Successfull", response.data);
-          // alert("User registered successfully");
-          // setTimeout(() => {
-          //   navigate("/login", {
-          //     state: { registrationSuccess: true },
-          //   });
-          // }, 1000); // Delay navigation by 1 second
           navigate("/login", {
             state: {
               registrationSuccess: true,
@@ -111,7 +164,7 @@ const SignUp = () => {
           setSubmitError("Registraion Failed.Please try again");
         }
       } finally {
-        setSubmitError(false);
+        submitted(false);
       }
     }
   };
