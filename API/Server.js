@@ -3,6 +3,7 @@ const app = express();
 require("dotenv").config();
 const { cleanEnv, str, port } = require("envalid");
 const morgan = require("morgan");
+const cookieParser = require("cookie-parser");
 const connectDB = require("./DB/connectDB");
 const errorHandler = require("./middlewares/errorHandler");
 const logger = require("./utils/logger");
@@ -25,8 +26,14 @@ app.use(
   })
 );
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 app.use(express.json());
+app.use(cookieParser());
 
 // Routes
 app.use("/api/users", userRoute);

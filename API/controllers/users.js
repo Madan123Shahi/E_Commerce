@@ -31,7 +31,7 @@ exports.register = async (req, res, next) => {
     const otp = generateOTP();
     const otpExpiry = Date.now() + 10 * 60 * 1000;
     // await sendOTP(contact, otp);
-    logger.info(`OTP Sent for the Contact ${contact}`);
+    logger.info(`OTP Sent for the Contact ${contact} with ${otp}`);
 
     // const user = await User.create({
     //   name,
@@ -65,6 +65,15 @@ exports.register = async (req, res, next) => {
       password,
       otpExpiry,
     });
+
+    // set Cookie
+    res.cookie("tempToken", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // Use https in production
+      sameSite: "strict",
+      maxAge: 24 * 60 * 60 * 1000, // 24 days
+    });
+
     logger.info(`Temp Token Generated for the Contact ${contact}`);
     return res.status(201).json({
       success: true,
@@ -92,6 +101,7 @@ exports.register = async (req, res, next) => {
 
 exports.verifyUser = async (req, res, next) => {
   const { token, otp } = req.body;
+
   if (!token || !otp) {
     logger.warn(`Verify:Missing OTP Or Token`);
     console.log(token, otp);
@@ -100,6 +110,7 @@ exports.verifyUser = async (req, res, next) => {
       .json({ Success: false, Message: "Token And OTP Required" });
   }
   try {
+    const token = req.cookies.tempToken;
     const decoded = verifyToken(token);
     console.log(decoded);
 
@@ -151,3 +162,30 @@ exports.verifyUser = async (req, res, next) => {
 
 // module.exports = register;
 // module.exports.storeOTP = this.storeOTP;
+
+exports.contactChecker = async (req, res, next) => {
+  const { contact } = req.body;
+  try {
+    if (!contact) {
+      logger.warn(`Contact Field is Missing`);
+      return res
+        .status(400)
+        .json({ Success: false, Message: "Contact Field is Missing" });
+    }
+    const user = await User.findOne({ contact });
+    if (user) {
+      logger.warn(`User is already exists with ${contact}`);
+      return res.status(400).json({
+        Success: false,
+        Message: `User is already exists with ${contact}`,
+      });
+    }
+    logger.info(`Create new User with this ${contact}`);
+    res
+      .status(200)
+      .json({ Success: true, Message: `Create new User with this ${contact}` });
+  } catch (error) {
+    logger.error(`Contact Error:${error.message}`);
+    next(error);
+  }
+};

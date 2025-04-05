@@ -1,0 +1,28 @@
+2025-04-05 19:58:00 [ERROR]: Registration Error:secretOrPrivateKey must have a value
+2025-04-05 19:58:00 [ERROR]: Error Handler:Internal Server Error
+Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (F:\E_Commerce\API\node_modules\jsonwebtoken\sign.js:111:20)
+    at exports.signToken (F:\E_Commerce\API\utils\jwt.js:4:14)
+    at exports.register (F:\E_Commerce\API\controllers\users.js:61:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-04-05 19:59:46 [ERROR]: Registration Error:secretOrPrivateKey must have a value
+2025-04-05 19:59:46 [ERROR]: Error Handler:Internal Server Error
+Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (F:\E_Commerce\API\node_modules\jsonwebtoken\sign.js:111:20)
+    at exports.signToken (F:\E_Commerce\API\utils\jwt.js:4:14)
+    at exports.register (F:\E_Commerce\API\controllers\users.js:61:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-04-05 20:17:24 [ERROR]: Registration Error:secretOrPrivateKey must have a value
+2025-04-05 20:17:24 [ERROR]: Error Handler:Internal Server Error
+Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (F:\E_Commerce\API\node_modules\jsonwebtoken\sign.js:111:20)
+    at exports.signToken (F:\E_Commerce\API\utils\jwt.js:4:14)
+    at exports.register (F:\E_Commerce\API\controllers\users.js:61:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-04-05 20:20:39 [ERROR]: Registration Error:secretOrPrivateKey must have a value
+2025-04-05 20:20:39 [ERROR]: Error Handler:Internal Server Error
+Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (F:\E_Commerce\API\node_modules\jsonwebtoken\sign.js:111:20)
+    at exports.signToken (F:\E_Commerce\API\utils\jwt.js:4:14)
+    at exports.register (F:\E_Commerce\API\controllers\users.js:61:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
