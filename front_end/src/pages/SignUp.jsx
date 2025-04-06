@@ -11,6 +11,7 @@ import {
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import api from "../axios";
+import cookies from "js-cookie";
 // Firebase Config
 const firebaseConfig = {
   apiKey: "YOUR_API_KEY",
@@ -93,9 +94,10 @@ const SignUpWithFeatures = () => {
   };
 
   const handleVerifyOtp = async () => {
+    const token = cookies.get("Token");
     try {
       const res = await api.post("/verify-otp", {
-        contact,
+        token,
         otp,
       });
       if (res.data.success) navigate("/login");

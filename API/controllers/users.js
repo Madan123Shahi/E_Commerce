@@ -67,8 +67,8 @@ exports.register = async (req, res, next) => {
     });
 
     // set Cookie
-    res.cookie("tempToken", token, {
-      httpOnly: true,
+    res.cookie("Token", token, {
+      httpOnly: false, // IF front end needs to read it
       secure: process.env.NODE_ENV === "production", // Use https in production
       sameSite: "strict",
       maxAge: 24 * 60 * 60 * 1000, // 24 days

@@ -48,3 +48,9 @@
 2025-04-06 01:03:59 [INFO]: ::1 - - [05/Apr/2025:19:33:59 +0000] "POST /api/users/register HTTP/1.1" 201 391 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
 2025-04-06 01:04:23 [INFO]: ::1 - - [05/Apr/2025:19:34:23 +0000] "OPTIONS /api/users/verify-otp HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
 2025-04-06 01:04:23 [INFO]: ::1 - - [05/Apr/2025:19:34:23 +0000] "POST /api/users/verify-otp HTTP/1.1" 404 160 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+2025-04-06 23:31:45 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-06 23:31:45 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-06 23:32:15 [ERROR]: Unhandled Rejection: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+2025-04-06 23:39:25 [INFO]: Database Connected Successfully at mongodb://127.0.0.1:27017/E_Commerce
+2025-04-06 23:39:25 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-06 23:39:55 [ERROR]: Unhandled Rejection: connect ECONNREFUSED 127.0.0.1:27017
