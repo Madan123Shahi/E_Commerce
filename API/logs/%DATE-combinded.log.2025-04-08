@@ -1,0 +1,174 @@
+2025-04-08 00:04:40 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-08 00:04:40 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-08 00:27:39 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-08 00:27:39 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-08 00:28:04 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-08 00:28:04 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-08 00:28:10 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-08 00:28:10 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-08 00:33:01 [INFO]: ::1 - - [07/Apr/2025:19:03:01 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:33:01 [INFO]: Create new User with this anthony8894@gmail.com
+2025-04-08 00:33:01 [INFO]: ::1 - - [07/Apr/2025:19:03:01 +0000] "POST /api/users/check-contact HTTP/1.1" 200 76 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:34:59 [INFO]: ::1 - - [07/Apr/2025:19:04:59 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:34:59 [INFO]: Incoming /regitser request for anthony8894@gmail.com
+2025-04-08 00:34:59 [INFO]: OTP Sent for the Contact anthony8894@gmail.com with 831144
+2025-04-08 00:34:59 [INFO]: Temp Token Generated for the Contact anthony8894@gmail.com
+2025-04-08 00:34:59 [INFO]: ::1 - - [07/Apr/2025:19:04:59 +0000] "POST /api/users/register HTTP/1.1" 201 401 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:35:23 [INFO]: ::1 - - [07/Apr/2025:19:05:23 +0000] "OPTIONS /api/users/verify HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:35:23 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-08 00:35:23 [INFO]: User Created Successfully:67f421f34077d8794010cfd3
+2025-04-08 00:35:23 [INFO]: ::1 - - [07/Apr/2025:19:05:23 +0000] "POST /api/users/verify HTTP/1.1" 201 166 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:35:25 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-08 00:35:25 [ERROR]: OTP 831144 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+2025-04-08 00:35:25 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+    at InsertOneOperation.execute (D:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-08 00:35:25 [INFO]: ::1 - - [07/Apr/2025:19:05:25 +0000] "POST /api/users/verify HTTP/1.1" 409 65 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:40:11 [INFO]: ::1 - - [07/Apr/2025:19:10:11 +0000] "OPTIONS /api/users/verify HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:40:11 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-08 00:40:11 [ERROR]: OTP 831144 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+2025-04-08 00:40:11 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+    at InsertOneOperation.execute (D:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-08 00:40:11 [INFO]: ::1 - - [07/Apr/2025:19:10:11 +0000] "POST /api/users/verify HTTP/1.1" 409 65 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:40:13 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-08 00:40:13 [ERROR]: OTP 831144 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+2025-04-08 00:40:13 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+    at InsertOneOperation.execute (D:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-08 00:40:13 [INFO]: ::1 - - [07/Apr/2025:19:10:13 +0000] "POST /api/users/verify HTTP/1.1" 409 65 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:43:14 [INFO]: ::1 - - [07/Apr/2025:19:13:14 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:43:14 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 00:43:14 [INFO]: ::1 - - [07/Apr/2025:19:13:14 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:43:20 [INFO]: ::1 - - [07/Apr/2025:19:13:20 +0000] "OPTIONS /api/users/verify HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:43:20 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-08 00:43:20 [ERROR]: OTP 831144 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+2025-04-08 00:43:20 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+    at InsertOneOperation.execute (D:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-08 00:43:20 [INFO]: ::1 - - [07/Apr/2025:19:13:20 +0000] "POST /api/users/verify HTTP/1.1" 409 65 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:43:41 [INFO]: ::1 - - [07/Apr/2025:19:13:41 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:43:41 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 00:43:41 [INFO]: ::1 - - [07/Apr/2025:19:13:41 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:44:54 [INFO]: ::1 - - [07/Apr/2025:19:14:54 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 00:44:54 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 00:44:54 [INFO]: ::1 - - [07/Apr/2025:19:14:54 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:03:47 [INFO]: ::1 - - [07/Apr/2025:19:33:47 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:03:47 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:03:47 [INFO]: ::1 - - [07/Apr/2025:19:33:47 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:04:22 [INFO]: ::1 - - [07/Apr/2025:19:34:22 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:04:22 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:04:22 [INFO]: ::1 - - [07/Apr/2025:19:34:22 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:04:35 [INFO]: ::1 - - [07/Apr/2025:19:34:35 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:04:35 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:04:35 [INFO]: ::1 - - [07/Apr/2025:19:34:35 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:05:53 [INFO]: ::1 - - [07/Apr/2025:19:35:53 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:05:53 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:05:53 [INFO]: ::1 - - [07/Apr/2025:19:35:53 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:14:53 [INFO]: ::1 - - [07/Apr/2025:19:44:53 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:14:53 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:14:53 [INFO]: ::1 - - [07/Apr/2025:19:44:53 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:15:44 [INFO]: ::1 - - [07/Apr/2025:19:45:44 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:15:44 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:15:44 [INFO]: ::1 - - [07/Apr/2025:19:45:44 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:16:10 [INFO]: ::1 - - [07/Apr/2025:19:46:10 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:16:10 [INFO]: Incoming /regitser request for anthony8894@gmail.com
+2025-04-08 01:16:10 [WARN]: Register:User is already exists with the Contact anthony8894@gmail.com
+2025-04-08 01:16:10 [INFO]: ::1 - - [07/Apr/2025:19:46:10 +0000] "POST /api/users/register HTTP/1.1" 400 100 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:17:18 [INFO]: ::1 - - [07/Apr/2025:19:47:18 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:17:18 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:17:18 [INFO]: ::1 - - [07/Apr/2025:19:47:18 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:18:29 [INFO]: ::1 - - [07/Apr/2025:19:48:29 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:18:29 [INFO]: Create new User with this madanshahi8894@gmail.com
+2025-04-08 01:18:29 [INFO]: ::1 - - [07/Apr/2025:19:48:29 +0000] "POST /api/users/check-contact HTTP/1.1" 200 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:19:59 [INFO]: ::1 - - [07/Apr/2025:19:49:59 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:19:59 [INFO]: Create new User with this madanshahi8894@gmail.com
+2025-04-08 01:19:59 [INFO]: ::1 - - [07/Apr/2025:19:49:59 +0000] "POST /api/users/check-contact HTTP/1.1" 200 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:20:22 [INFO]: ::1 - - [07/Apr/2025:19:50:22 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:20:22 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:20:22 [INFO]: ::1 - - [07/Apr/2025:19:50:22 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:31:33 [INFO]: ::1 - - [07/Apr/2025:20:01:33 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:31:33 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:31:33 [INFO]: ::1 - - [07/Apr/2025:20:01:33 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:32:03 [INFO]: ::1 - - [07/Apr/2025:20:02:03 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:32:03 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:32:03 [INFO]: ::1 - - [07/Apr/2025:20:02:03 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:33:06 [INFO]: ::1 - - [07/Apr/2025:20:03:06 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:33:06 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:33:06 [INFO]: ::1 - - [07/Apr/2025:20:03:06 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:33:27 [INFO]: ::1 - - [07/Apr/2025:20:03:27 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:33:27 [WARN]: User is already exists with anthony8894@gmail.com
+2025-04-08 01:33:27 [INFO]: ::1 - - [07/Apr/2025:20:03:27 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:33:43 [INFO]: ::1 - - [07/Apr/2025:20:03:43 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:33:43 [INFO]: Create new User with this parvinder@brightheadit.com
+2025-04-08 01:33:43 [INFO]: ::1 - - [07/Apr/2025:20:03:43 +0000] "POST /api/users/check-contact HTTP/1.1" 200 81 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:33:58 [INFO]: ::1 - - [07/Apr/2025:20:03:58 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:33:58 [INFO]: Incoming /regitser request for parvinder@brightheadit.com
+2025-04-08 01:33:58 [INFO]: OTP Sent for the Contact parvinder@brightheadit.com with 523685
+2025-04-08 01:33:58 [INFO]: Temp Token Generated for the Contact parvinder@brightheadit.com
+2025-04-08 01:33:58 [INFO]: ::1 - - [07/Apr/2025:20:03:58 +0000] "POST /api/users/register HTTP/1.1" 201 415 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:34:15 [INFO]: ::1 - - [07/Apr/2025:20:04:15 +0000] "OPTIONS /api/users/verify HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:34:15 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-08 01:34:16 [INFO]: User Created Successfully:67f42fbf4077d8794010cff1
+2025-04-08 01:34:16 [INFO]: ::1 - - [07/Apr/2025:20:04:16 +0000] "POST /api/users/verify HTTP/1.1" 201 176 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:34:19 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-08 01:34:20 [ERROR]: OTP 523685 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "parvinder@brightheadit.com" }
+2025-04-08 01:34:20 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "parvinder@brightheadit.com" }
+    at InsertOneOperation.execute (D:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-08 01:34:20 [INFO]: ::1 - - [07/Apr/2025:20:04:20 +0000] "POST /api/users/verify HTTP/1.1" 409 65 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:37:56 [INFO]: ::1 - - [07/Apr/2025:20:07:56 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:37:56 [INFO]: Create new User with this Jagriti8894@gmail.com
+2025-04-08 01:37:56 [INFO]: ::1 - - [07/Apr/2025:20:07:56 +0000] "POST /api/users/check-contact HTTP/1.1" 200 76 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:38:07 [INFO]: ::1 - - [07/Apr/2025:20:08:07 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:38:07 [INFO]: Incoming /regitser request for Jagriti8894@gmail.com
+2025-04-08 01:38:07 [INFO]: OTP Sent for the Contact Jagriti8894@gmail.com with 736624
+2025-04-08 01:38:07 [INFO]: Temp Token Generated for the Contact Jagriti8894@gmail.com
+2025-04-08 01:38:07 [INFO]: ::1 - - [07/Apr/2025:20:08:07 +0000] "POST /api/users/register HTTP/1.1" 201 405 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:38:26 [INFO]: ::1 - - [07/Apr/2025:20:08:26 +0000] "OPTIONS /api/users/verify HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:38:26 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-08 01:38:26 [INFO]: User Created Successfully:67f430ba4077d8794010cff7
+2025-04-08 01:38:26 [INFO]: ::1 - - [07/Apr/2025:20:08:26 +0000] "POST /api/users/verify HTTP/1.1" 201 169 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:41:14 [INFO]: ::1 - - [07/Apr/2025:20:11:14 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:41:14 [WARN]: User is already exists with Jagriti8894@gmail.com
+2025-04-08 01:41:14 [INFO]: ::1 - - [07/Apr/2025:20:11:14 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:42:04 [INFO]: ::1 - - [07/Apr/2025:20:12:04 +0000] "OPTIONS /api/users/check-contact HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:42:04 [INFO]: Create new User with this 8899@gmail.co
+2025-04-08 01:42:04 [INFO]: ::1 - - [07/Apr/2025:20:12:04 +0000] "POST /api/users/check-contact HTTP/1.1" 200 68 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:42:05 [INFO]: Create new User with this 8899@gmail.com
+2025-04-08 01:42:05 [INFO]: ::1 - - [07/Apr/2025:20:12:05 +0000] "POST /api/users/check-contact HTTP/1.1" 200 69 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:42:17 [INFO]: ::1 - - [07/Apr/2025:20:12:17 +0000] "OPTIONS /api/users/register HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:42:17 [INFO]: Incoming /regitser request for 8899@gmail.com
+2025-04-08 01:42:17 [INFO]: OTP Sent for the Contact 8899@gmail.com with 631759
+2025-04-08 01:42:17 [INFO]: Temp Token Generated for the Contact 8899@gmail.com
+2025-04-08 01:42:17 [INFO]: ::1 - - [07/Apr/2025:20:12:17 +0000] "POST /api/users/register HTTP/1.1" 201 397 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:42:31 [INFO]: ::1 - - [07/Apr/2025:20:12:31 +0000] "OPTIONS /api/users/verify HTTP/1.1" 204 0 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:42:31 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-08 01:42:31 [INFO]: User Created Successfully:67f431af4077d8794010cffd
+2025-04-08 01:42:31 [INFO]: ::1 - - [07/Apr/2025:20:12:31 +0000] "POST /api/users/verify HTTP/1.1" 201 163 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0"
+2025-04-08 01:52:10 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-08 01:52:10 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-08 01:54:39 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-08 01:54:39 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-08 01:55:05 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-08 01:55:05 [INFO]: Server is Connected Successfully at PORT 8000

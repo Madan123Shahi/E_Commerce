@@ -10,6 +10,8 @@ const generateOTP = () =>
 // Single Export
 exports.register = async (req, res, next) => {
   const { name, contact, password } = req.body;
+  const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact);
+  const isNumber = /^(\+\d{1,3}[- ]?)?\d{10}$/.test(contact);
   if (!name || !contact || !password) {
     logger.warn("Register:Missing Required Fields");
     return res
@@ -110,7 +112,6 @@ exports.verifyUser = async (req, res, next) => {
       .json({ Success: false, Message: "Token And OTP Required" });
   }
   try {
-    const token = req.cookies.tempToken;
     const decoded = verifyToken(token);
     console.log(decoded);
 

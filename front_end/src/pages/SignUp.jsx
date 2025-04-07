@@ -95,12 +95,14 @@ const SignUpWithFeatures = () => {
 
   const handleVerifyOtp = async () => {
     const token = cookies.get("Token");
+    const contact = token.contact;
+    console.log(contact);
     try {
-      const res = await api.post("/verify-otp", {
+      const res = await api.post("/verify", {
         token,
         otp,
       });
-      if (res.data.success) navigate("/login");
+      if (res.data.Success) navigate("/login");
     } catch {
       alert("Invalid OTP");
     }

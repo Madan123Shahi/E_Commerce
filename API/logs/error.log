@@ -28,3 +28,96 @@ Error: secretOrPrivateKey must have a value
     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
 2025-04-06 23:32:15 [ERROR]: Unhandled Rejection: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
 2025-04-06 23:39:55 [ERROR]: Unhandled Rejection: connect ECONNREFUSED 127.0.0.1:27017
+2025-04-07 20:58:01 [ERROR]: Registration Error:secretOrPrivateKey must have a value
+2025-04-07 20:58:01 [ERROR]: Error Handler:Internal Server Error
+Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (D:\E_Commerce\API\node_modules\jsonwebtoken\sign.js:111:20)
+    at exports.signToken (D:\E_Commerce\API\utils\jwt.js:4:14)
+    at exports.register (D:\E_Commerce\API\controllers\users.js:61:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-04-07 21:02:17 [ERROR]: Registration Error:secretOrPrivateKey must have a value
+2025-04-07 21:02:17 [ERROR]: Error Handler:Internal Server Error
+Error: secretOrPrivateKey must have a value
+    at module.exports [as sign] (D:\E_Commerce\API\node_modules\jsonwebtoken\sign.js:111:20)
+    at exports.signToken (D:\E_Commerce\API\utils\jwt.js:4:14)
+    at exports.register (D:\E_Commerce\API\controllers\users.js:61:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-04-07 21:14:18 [ERROR]: OTP 502148 verification Error:jwt must be provided
+2025-04-07 21:14:18 [ERROR]: Error Handler:Invalid or tampered token.
+JsonWebTokenError: jwt must be provided
+    at module.exports [as verify] (D:\E_Commerce\API\node_modules\jsonwebtoken\verify.js:60:17)
+    at exports.verifyToken (D:\E_Commerce\API\utils\jwt.js:8:14)
+    at exports.verifyUser (D:\E_Commerce\API\controllers\users.js:114:21)
+    at D:\E_Commerce\API\routes\userRoutes.js:64:3
+    at Layer.handle [as handle_request] (D:\E_Commerce\API\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\E_Commerce\API\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\E_Commerce\API\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\E_Commerce\API\node_modules\express\lib\router\layer.js:95:5)
+    at D:\E_Commerce\API\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\E_Commerce\API\node_modules\express\lib\router\index.js:346:12)
+2025-04-07 21:14:20 [ERROR]: OTP 502148 verification Error:jwt must be provided
+2025-04-07 21:14:20 [ERROR]: Error Handler:Invalid or tampered token.
+JsonWebTokenError: jwt must be provided
+    at module.exports [as verify] (D:\E_Commerce\API\node_modules\jsonwebtoken\verify.js:60:17)
+    at exports.verifyToken (D:\E_Commerce\API\utils\jwt.js:8:14)
+    at exports.verifyUser (D:\E_Commerce\API\controllers\users.js:114:21)
+    at D:\E_Commerce\API\routes\userRoutes.js:64:3
+    at Layer.handle [as handle_request] (D:\E_Commerce\API\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\E_Commerce\API\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\E_Commerce\API\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\E_Commerce\API\node_modules\express\lib\router\layer.js:95:5)
+    at D:\E_Commerce\API\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\E_Commerce\API\node_modules\express\lib\router\index.js:346:12)
+2025-04-07 23:47:56 [ERROR]: OTP 981879 verification Error:jwt must be provided
+2025-04-07 23:47:56 [ERROR]: Error Handler:Invalid or tampered token.
+JsonWebTokenError: jwt must be provided
+    at module.exports [as verify] (D:\E_Commerce\API\node_modules\jsonwebtoken\verify.js:60:17)
+    at exports.verifyToken (D:\E_Commerce\API\utils\jwt.js:8:14)
+    at exports.verifyUser (D:\E_Commerce\API\controllers\users.js:114:21)
+    at D:\E_Commerce\API\routes\userRoutes.js:64:3
+    at Layer.handle [as handle_request] (D:\E_Commerce\API\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\E_Commerce\API\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (D:\E_Commerce\API\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (D:\E_Commerce\API\node_modules\express\lib\router\layer.js:95:5)
+    at D:\E_Commerce\API\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (D:\E_Commerce\API\node_modules\express\lib\router\index.js:346:12)
+2025-04-08 00:35:25 [ERROR]: OTP 831144 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+2025-04-08 00:35:25 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+    at InsertOneOperation.execute (D:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-08 00:40:11 [ERROR]: OTP 831144 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+2025-04-08 00:40:11 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+    at InsertOneOperation.execute (D:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-08 00:40:13 [ERROR]: OTP 831144 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+2025-04-08 00:40:13 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+    at InsertOneOperation.execute (D:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-08 00:43:20 [ERROR]: OTP 831144 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+2025-04-08 00:43:20 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "anthony8894@gmail.com" }
+    at InsertOneOperation.execute (D:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-08 01:34:20 [ERROR]: OTP 523685 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "parvinder@brightheadit.com" }
+2025-04-08 01:34:20 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "parvinder@brightheadit.com" }
+    at InsertOneOperation.execute (D:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
