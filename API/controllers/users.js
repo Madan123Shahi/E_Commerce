@@ -60,6 +60,9 @@ exports.register = async (req, res, next) => {
     //   process.env.JWT_SECRET,
     //   { expiresIn: "1d" }
     // );
+    if (isNumber) {
+      await sendOTP(contact, otp);
+    }
     const token = signToken({
       name,
       contact,
