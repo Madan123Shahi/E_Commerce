@@ -121,3 +121,10 @@ MongoServerError: E11000 duplicate key error collection: E_Commerce.users index:
     at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
     at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
     at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-09 02:22:54 [ERROR]: OTP 667826 verification Error:connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+2025-04-09 02:22:54 [ERROR]: Error Handler:Internal Server Error
+MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at Topology.selectServer (D:\E_Commerce\API\node_modules\mongodb\lib\sdam\topology.js:321:38)
+    at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:145:18)
+    at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)

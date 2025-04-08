@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const bcrypt = require("bcryptjs");
 const sendOTP = require("../utils/twilio");
 // const { storeOTP } = require("../utils/storeOTP");
 // const jwt = require("jsonwebtoken");
@@ -190,6 +191,60 @@ exports.contactChecker = async (req, res, next) => {
       .json({ Success: true, Message: `Create new User with this ${contact}` });
   } catch (error) {
     logger.error(`Contact Error:${error.message}`);
+    next(error);
+  }
+};
+
+exports.login = async (req, res, next) => {
+  const { contact, password } = req.body;
+  try {
+    // Missing Fields
+    if (!contact || !password) {
+      logger.info(`Missing Fields`);
+      return res
+        .status(400)
+        .json({ Success: false, Message: "Missing Fields" });
+    }
+    // Chech for the user
+    const user = await User.findOne({ contact });
+    if (!user) {
+      logger.warn(`Login:User Doesn't Exists with ${contact}`);
+      return res.status(400).json({
+        Success: false,
+        Message: `Login:User Doesn't Exists with ${contact}`,
+      });
+    }
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      logger.warn(`Login:${password} Doesn't Match with ${contact}`);
+      return res.status(400).json({
+        Success: false,
+        Message: `Login:${password} Doesn't Match with ${contact}`,
+      });
+    }
+
+    // Generate token
+    const token = signToken({ userID: user._id, contact: user.contact });
+    // Set Cookie
+    res.cookie("Token", token, {
+      httpOnly: false, // IF front end needs to read it
+      secure: process.env.NODE_ENV === "production", // Use https in production
+      sameSite: "strict",
+      maxAge: 24 * 60 * 60 * 1000, // 24 days
+    });
+    logger.info(`Login:User logged In Successfully with ${contact}`);
+    return res.status(200).json({
+      Success: true,
+      Message: "User Logged in",
+      token,
+      User: {
+        id: user._id,
+        contact: user.contact,
+        name: user.name,
+      },
+    });
+  } catch (error) {
+    logger.error(`Server Error:${error.message}`);
     next(error);
   }
 };
