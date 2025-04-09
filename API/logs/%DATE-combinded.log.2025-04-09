@@ -25,3 +25,28 @@ MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 
 2025-04-09 02:36:46 [INFO]: Incoming /regitser request for Anthony8894@gmail.com
 2025-04-09 02:36:46 [WARN]: Register:User is already exists with the Contact Anthony8894@gmail.com
 2025-04-09 02:36:46 [INFO]: ::1 - - [08/Apr/2025:21:06:46 +0000] "POST /api/users/register HTTP/1.1" 400 100 "-" "PostmanRuntime/7.43.3"
+2025-04-09 23:31:06 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-09 23:31:06 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-09 23:31:10 [WARN]: User is already exists with Anthony8894@gmail.com
+2025-04-09 23:31:10 [INFO]: ::1 - - [09/Apr/2025:18:01:10 +0000] "POST /api/users/check-contact HTTP/1.1" 400 79 "-" "PostmanRuntime/7.43.3"
+2025-04-09 23:31:55 [INFO]: Incoming /regitser request for june8894@gmail.com
+2025-04-09 23:31:55 [INFO]: OTP Sent for the Contact june8894@gmail.com with 228901
+2025-04-09 23:31:55 [INFO]: Temp Token Generated for the Contact june8894@gmail.com
+2025-04-09 23:31:55 [INFO]: ::1 - - [09/Apr/2025:18:01:55 +0000] "POST /api/users/register HTTP/1.1" 201 397 "-" "PostmanRuntime/7.43.3"
+2025-04-09 23:34:25 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-09 23:34:25 [INFO]: User Created Successfully:67f6b6a92c2c99517d5bb4cc
+2025-04-09 23:34:25 [INFO]: ::1 - - [09/Apr/2025:18:04:25 +0000] "POST /api/users/verify HTTP/1.1" 201 163 "-" "PostmanRuntime/7.43.3"
+2025-04-09 23:34:50 [WARN]: User is already exists with june8894@gmail.com
+2025-04-09 23:34:50 [INFO]: ::1 - - [09/Apr/2025:18:04:50 +0000] "POST /api/users/check-contact HTTP/1.1" 400 76 "-" "PostmanRuntime/7.43.3"
+2025-04-09 23:34:57 [INFO]: Create new User with this june8899@gmail.com
+2025-04-09 23:34:57 [INFO]: ::1 - - [09/Apr/2025:18:04:57 +0000] "POST /api/users/check-contact HTTP/1.1" 200 73 "-" "PostmanRuntime/7.43.3"
+2025-04-09 23:41:08 [WARN]: Login:User Doesn't Exists with june8899@gmail.com
+2025-04-09 23:41:08 [INFO]: ::1 - - [09/Apr/2025:18:11:08 +0000] "POST /api/users/login HTTP/1.1" 400 79 "-" "PostmanRuntime/7.43.3"
+2025-04-09 23:41:41 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-09 23:41:41 [INFO]: ::1 - - [09/Apr/2025:18:11:41 +0000] "POST /api/users/login HTTP/1.1" 200 364 "-" "PostmanRuntime/7.43.3"
+2025-04-09 23:48:20 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-09 23:48:20 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-09 23:48:59 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-09 23:48:59 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-09 23:52:32 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-09 23:52:32 [INFO]: ::1 - - [09/Apr/2025:18:22:32 +0000] "POST /api/users/login HTTP/1.1" 200 364 "-" "PostmanRuntime/7.43.3"

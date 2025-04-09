@@ -128,3 +128,25 @@ MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 
     at async tryOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:145:18)
     at async executeOperation (D:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
     at async Collection.insertOne (D:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-10 00:11:11 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt is not defined
+2025-04-10 00:11:11 [ERROR]: Server Error:Cannot set headers after they are sent to the client
+2025-04-10 00:11:11 [ERROR]: Error Handler:Internal Server Error
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:659:11)
+    at ServerResponse.header (D:\E_Commerce\API\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.append (D:\E_Commerce\API\node_modules\express\lib\response.js:755:15)
+    at res.cookie (D:\E_Commerce\API\node_modules\express\lib\response.js:892:8)
+    at exports.login (D:\E_Commerce\API\controllers\users.js:252:9)
+2025-04-10 00:12:04 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt is not defined
+2025-04-10 00:12:04 [ERROR]: Server Error:Cannot set headers after they are sent to the client
+2025-04-10 00:12:04 [ERROR]: Error Handler:Internal Server Error
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:659:11)
+    at ServerResponse.header (D:\E_Commerce\API\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.append (D:\E_Commerce\API\node_modules\express\lib\response.js:755:15)
+    at res.cookie (D:\E_Commerce\API\node_modules\express\lib\response.js:892:8)
+    at exports.login (D:\E_Commerce\API\controllers\users.js:252:9)
+2025-04-10 00:12:40 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt is not defined
+2025-04-10 00:28:25 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt expired
+2025-04-10 00:28:55 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt expired
+2025-04-10 00:34:32 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt expired

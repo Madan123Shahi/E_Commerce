@@ -74,7 +74,7 @@ exports.register = async (req, res, next) => {
 
     // set Cookie
     res.cookie("Token", token, {
-      httpOnly: false, // IF front end needs to read it
+      httpOnly: true, // for front end to see set value to false needs to read it
       secure: process.env.NODE_ENV === "production", // Use https in production
       sameSite: "strict",
       maxAge: 24 * 60 * 60 * 1000, // 24 days
@@ -197,23 +197,39 @@ exports.contactChecker = async (req, res, next) => {
 
 exports.login = async (req, res, next) => {
   const { contact, password } = req.body;
+
+  // ✅ Check if Token cookie exists and is valid
+  const tokenFromCookie = req.cookies?.Token;
+  if (tokenFromCookie) {
+    try {
+      const decoded = jwt.verify(tokenFromCookie, process.env.JWT_SECRET);
+      logger.info(`Login:User already logged in with ${decoded.contact}`);
+      return res.status(200).json({
+        Success: false,
+        Message: "User already logged in",
+      });
+    } catch (err) {
+      // Invalid or expired token - continue with login
+    }
+  }
+
   try {
-    // Missing Fields
     if (!contact || !password) {
       logger.info(`Missing Fields`);
       return res
         .status(400)
         .json({ Success: false, Message: "Missing Fields" });
     }
-    // Chech for the user
+
     const user = await User.findOne({ contact });
     if (!user) {
-      logger.warn(`Login:User Doesn't Exists with ${contact}`);
+      logger.warn(`Login:User Doesn't Exist with ${contact}`);
       return res.status(400).json({
         Success: false,
-        Message: `Login:User Doesn't Exists with ${contact}`,
+        Message: `Login:User Doesn't Exist with ${contact}`,
       });
     }
+
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       logger.warn(`Login:${password} Doesn't Match with ${contact}`);
@@ -223,15 +239,15 @@ exports.login = async (req, res, next) => {
       });
     }
 
-    // Generate token
     const token = signToken({ userID: user._id, contact: user.contact });
-    // Set Cookie
+
     res.cookie("Token", token, {
-      httpOnly: false, // IF front end needs to read it
-      secure: process.env.NODE_ENV === "production", // Use https in production
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
-      maxAge: 24 * 60 * 60 * 1000, // 24 days
+      maxAge: 24 * 60 * 60 * 1000,
     });
+
     logger.info(`Login:User logged In Successfully with ${contact}`);
     return res.status(200).json({
       Success: true,

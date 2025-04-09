@@ -1,0 +1,71 @@
+2025-04-10 00:05:52 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 00:05:52 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 00:09:48 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 00:09:48 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 00:11:04 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 00:11:04 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 00:11:11 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt is not defined
+2025-04-10 00:11:11 [INFO]: ::1 - - [09/Apr/2025:18:41:11 +0000] "POST /api/users/login HTTP/1.1" 400 80 "-" "PostmanRuntime/7.43.3"
+2025-04-10 00:11:11 [ERROR]: Server Error:Cannot set headers after they are sent to the client
+2025-04-10 00:11:11 [ERROR]: Error Handler:Internal Server Error
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:659:11)
+    at ServerResponse.header (D:\E_Commerce\API\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.append (D:\E_Commerce\API\node_modules\express\lib\response.js:755:15)
+    at res.cookie (D:\E_Commerce\API\node_modules\express\lib\response.js:892:8)
+    at exports.login (D:\E_Commerce\API\controllers\users.js:252:9)
+2025-04-10 00:11:49 [INFO]: Incoming /regitser request for june8894@gmail.com
+2025-04-10 00:11:49 [WARN]: Register:User is already exists with the Contact june8894@gmail.com
+2025-04-10 00:11:49 [INFO]: ::1 - - [09/Apr/2025:18:41:49 +0000] "POST /api/users/register HTTP/1.1" 400 97 "-" "PostmanRuntime/7.43.3"
+2025-04-10 00:12:04 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt is not defined
+2025-04-10 00:12:04 [INFO]: ::1 - - [09/Apr/2025:18:42:04 +0000] "POST /api/users/login HTTP/1.1" 400 80 "-" "PostmanRuntime/7.43.3"
+2025-04-10 00:12:04 [ERROR]: Server Error:Cannot set headers after they are sent to the client
+2025-04-10 00:12:04 [ERROR]: Error Handler:Internal Server Error
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:659:11)
+    at ServerResponse.header (D:\E_Commerce\API\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.append (D:\E_Commerce\API\node_modules\express\lib\response.js:755:15)
+    at res.cookie (D:\E_Commerce\API\node_modules\express\lib\response.js:892:8)
+    at exports.login (D:\E_Commerce\API\controllers\users.js:252:9)
+2025-04-10 00:12:31 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 00:12:31 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 00:12:38 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 00:12:38 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 00:12:40 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt is not defined
+2025-04-10 00:12:40 [INFO]: ::1 - - [09/Apr/2025:18:42:40 +0000] "POST /api/users/login HTTP/1.1" 400 80 "-" "PostmanRuntime/7.43.3"
+2025-04-10 00:27:33 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 00:27:33 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 00:28:11 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 00:28:11 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 00:28:25 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt expired
+2025-04-10 00:28:25 [INFO]: ::1 - - [09/Apr/2025:18:58:25 +0000] "POST /api/users/login HTTP/1.1" 400 80 "-" "PostmanRuntime/7.43.3"
+2025-04-10 00:28:55 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt expired
+2025-04-10 00:28:55 [INFO]: ::1 - - [09/Apr/2025:18:58:55 +0000] "POST /api/users/login HTTP/1.1" 400 80 "-" "PostmanRuntime/7.43.3"
+2025-04-10 00:33:08 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 00:33:08 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 00:33:22 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 00:33:22 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 00:34:32 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt expired
+2025-04-10 00:34:32 [INFO]: ::1 - - [09/Apr/2025:19:04:32 +0000] "POST /api/users/login HTTP/1.1" 400 80 "-" "PostmanRuntime/7.43.3"
+2025-04-10 00:38:31 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 00:38:31 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 00:38:45 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 00:38:45 [INFO]: ::1 - - [09/Apr/2025:19:08:45 +0000] "POST /api/users/login HTTP/1.1" 200 364 "-" "PostmanRuntime/7.43.3"
+2025-04-10 00:38:53 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 00:38:53 [INFO]: ::1 - - [09/Apr/2025:19:08:53 +0000] "POST /api/users/login HTTP/1.1" 200 364 "-" "PostmanRuntime/7.43.3"
+2025-04-10 00:39:02 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 00:39:02 [INFO]: ::1 - - [09/Apr/2025:19:09:02 +0000] "POST /api/users/login HTTP/1.1" 200 364 "-" "PostmanRuntime/7.43.3"
+2025-04-10 01:09:16 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 01:09:16 [INFO]: ::1 - - [09/Apr/2025:19:39:16 +0000] "POST /api/users/login HTTP/1.1" 200 364 "-" "PostmanRuntime/7.43.3"
+2025-04-10 01:10:49 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 01:10:49 [INFO]: ::1 - - [09/Apr/2025:19:40:49 +0000] "POST /api/users/login HTTP/1.1" 200 364 "-" "PostmanRuntime/7.43.3"
+2025-04-10 01:10:54 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 01:10:54 [INFO]: ::1 - - [09/Apr/2025:19:40:54 +0000] "POST /api/users/login HTTP/1.1" 200 364 "-" "PostmanRuntime/7.43.3"
+2025-04-10 01:58:01 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 01:58:01 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 01:58:18 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 01:58:18 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 01:58:30 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 01:58:30 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 01:59:02 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 01:59:02 [INFO]: Server is Connected Successfully at PORT 8000
