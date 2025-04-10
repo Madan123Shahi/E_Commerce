@@ -150,3 +150,15 @@ Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the cli
 2025-04-10 00:28:25 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt expired
 2025-04-10 00:28:55 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt expired
 2025-04-10 00:34:32 [ERROR]: Token Expired For june8894@gmail.com Log In Again.:jwt expired
+2025-04-10 13:37:06 [ERROR]: OTP 939534 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "june8894@gmail.com" }
+2025-04-10 13:37:06 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "june8894@gmail.com" }
+    at InsertOneOperation.execute (F:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (F:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (F:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (F:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-10 13:37:28 [ERROR]: Server Error:Cannot access 'refreshToken' before initialization
+2025-04-10 13:37:28 [ERROR]: Error Handler:Internal Server Error
+ReferenceError: Cannot access 'refreshToken' before initialization
+    at exports.login (F:\E_Commerce\API\controllers\users.js:253:26)

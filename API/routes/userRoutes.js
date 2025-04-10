@@ -6,6 +6,7 @@ const {
   verifyUser,
   contactChecker,
   login,
+  refreshAccessToken,
 } = require("../controllers/users.js");
 const logger = require("../utils/logger");
 
@@ -68,5 +69,7 @@ router.post("/verify", (req, res, next) => {
 router.post("/check-contact", contactChecker);
 
 router.post("/login", login);
+
+router.post("/refreshToken", refreshAccessToken);
 
 module.exports = router;

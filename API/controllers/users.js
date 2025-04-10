@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const sendOTP = require("../utils/twilio");
 // const { storeOTP } = require("../utils/storeOTP");
 // const jwt = require("jsonwebtoken");
-const { signToken, verifyToken } = require("../utils/jwt");
+const { signToken, verifyToken, refreshToken } = require("../utils/jwt");
 const logger = require("../utils/logger");
 
 const generateOTP = () =>
@@ -64,20 +64,13 @@ exports.register = async (req, res, next) => {
     if (isNumber) {
       await sendOTP(contact, otp);
     }
+    // Generating Token
     const token = signToken({
       name,
       contact,
       otp,
       password,
       otpExpiry,
-    });
-
-    // set Cookie
-    res.cookie("Token", token, {
-      httpOnly: true, // for front end to see set value to false needs to read it
-      secure: process.env.NODE_ENV === "production", // Use https in production
-      sameSite: "strict",
-      maxAge: 24 * 60 * 60 * 1000, // 24 days
     });
 
     logger.info(`Temp Token Generated for the Contact ${contact}`);
@@ -248,11 +241,34 @@ exports.login = async (req, res, next) => {
       maxAge: 24 * 60 * 60 * 1000,
     });
 
+    // set Cookie for Token
+    res.cookie("Token", token, {
+      httpOnly: true, // for front end to see set value to false needs to read it
+      secure: process.env.NODE_ENV === "production", // Use https in production
+      sameSite: "strict",
+      maxAge: 24 * 60 * 60 * 1000, // 24 days
+    });
+
+    // Generating refresh Token
+    const refreshNewToken = refreshToken({
+      id: user._id,
+      contact: user.contact,
+    });
+
+    // Set Cookie for Refresh Token
+    res.cookie("RefreshToken", refreshNewToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      maxAge: 24 * 60 * 60 * 1000,
+    });
+
     logger.info(`Login:User logged In Successfully with ${contact}`);
     return res.status(200).json({
       Success: true,
       Message: "User Logged in",
       token,
+      refreshNewToken,
       User: {
         id: user._id,
         contact: user.contact,
@@ -261,6 +277,43 @@ exports.login = async (req, res, next) => {
     });
   } catch (error) {
     logger.error(`Server Error:${error.message}`);
+    next(error);
+  }
+};
+
+exports.refreshAccessToken = async (req, res, next) => {
+  const token = req.cookies?.RefreshToken;
+  if (!token) {
+    logger.warn(`Refresh Token Missing`);
+    return res
+      .status(401)
+      .json({ Success: false, Message: "Refresh Token Missing" });
+  }
+  try {
+    const decoded = verifyToken(token);
+    if (!decoded) {
+      logger.warn(`Invalid Token`);
+      return res.status(401).json({ Success: false, Message: "Invalid Token" });
+    }
+    // Generate new Token
+    const newToken = signToken({ id: decoded._id, contact: decoded.contact });
+
+    // Set cookie
+    res.cookie("NewToken", newToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      maxage: 10 * 60 * 1000,
+    });
+
+    logger.info("New Token has been generated");
+    res.status(200).json({
+      Success: true,
+      Message: "New Token Generated",
+      accessToken: newToken,
+    });
+  } catch (error) {
+    logger.error(`Error while creating refresh Token:${error.message}`);
     next(error);
   }
 };

@@ -69,3 +69,48 @@ Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the cli
 2025-04-10 01:58:30 [INFO]: Server is Connected Successfully at PORT 8000
 2025-04-10 01:59:02 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
 2025-04-10 01:59:02 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 13:35:44 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 13:35:44 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 13:36:01 [INFO]: Incoming /regitser request for june8894@gmail.com
+2025-04-10 13:36:01 [INFO]: OTP Sent for the Contact june8894@gmail.com with 939534
+2025-04-10 13:36:01 [INFO]: Temp Token Generated for the Contact june8894@gmail.com
+2025-04-10 13:36:01 [INFO]: ::1 - - [10/Apr/2025:08:06:01 +0000] "POST /api/users/register HTTP/1.1" 201 397 "-" "PostmanRuntime/7.43.3"
+2025-04-10 13:36:42 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-10 13:36:42 [INFO]: User Created Successfully:67f77c12bf15d4748025aa18
+2025-04-10 13:36:42 [INFO]: ::1 - - [10/Apr/2025:08:06:42 +0000] "POST /api/users/verify HTTP/1.1" 201 163 "-" "PostmanRuntime/7.43.3"
+2025-04-10 13:36:58 [INFO]: Incoming /regitser request for june8894@gmail.com
+2025-04-10 13:36:58 [WARN]: Register:User is already exists with the Contact june8894@gmail.com
+2025-04-10 13:36:58 [INFO]: ::1 - - [10/Apr/2025:08:06:58 +0000] "POST /api/users/register HTTP/1.1" 400 97 "-" "PostmanRuntime/7.43.3"
+2025-04-10 13:37:06 [INFO]: Incoming /verify request with token starting:eyJhbGciOi...
+2025-04-10 13:37:06 [ERROR]: OTP 939534 verification Error:E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "june8894@gmail.com" }
+2025-04-10 13:37:06 [ERROR]: Error Handler:Duplicate value for field 'contact'
+MongoServerError: E11000 duplicate key error collection: E_Commerce.users index: contact_1 dup key: { contact: "june8894@gmail.com" }
+    at InsertOneOperation.execute (F:\E_Commerce\API\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async tryOperation (F:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:207:20)
+    at async executeOperation (F:\E_Commerce\API\node_modules\mongodb\lib\operations\execute_operation.js:75:16)
+    at async Collection.insertOne (F:\E_Commerce\API\node_modules\mongodb\lib\collection.js:157:16)
+2025-04-10 13:37:06 [INFO]: ::1 - - [10/Apr/2025:08:07:06 +0000] "POST /api/users/verify HTTP/1.1" 409 65 "-" "PostmanRuntime/7.43.3"
+2025-04-10 13:37:28 [ERROR]: Server Error:Cannot access 'refreshToken' before initialization
+2025-04-10 13:37:28 [ERROR]: Error Handler:Internal Server Error
+ReferenceError: Cannot access 'refreshToken' before initialization
+    at exports.login (F:\E_Commerce\API\controllers\users.js:253:26)
+2025-04-10 13:37:28 [INFO]: ::1 - - [10/Apr/2025:08:07:28 +0000] "POST /api/users/login HTTP/1.1" 500 51 "-" "PostmanRuntime/7.43.3"
+2025-04-10 13:41:01 [INFO]: Database Connected Successfully at mongodb://localhost:27017/E_Commerce
+2025-04-10 13:41:01 [INFO]: Server is Connected Successfully at PORT 8000
+2025-04-10 13:41:31 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 13:41:32 [INFO]: ::1 - - [10/Apr/2025:08:11:32 +0000] "POST /api/users/login HTTP/1.1" 200 597 "-" "PostmanRuntime/7.43.3"
+2025-04-10 13:41:52 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 13:41:52 [INFO]: ::1 - - [10/Apr/2025:08:11:52 +0000] "POST /api/users/login HTTP/1.1" 200 597 "-" "PostmanRuntime/7.43.3"
+2025-04-10 13:53:17 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 13:53:17 [INFO]: ::1 - - [10/Apr/2025:08:23:17 +0000] "POST /api/users/login HTTP/1.1" 200 597 "-" "PostmanRuntime/7.43.3"
+2025-04-10 13:56:34 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 13:56:34 [INFO]: ::1 - - [10/Apr/2025:08:26:34 +0000] "POST /api/users/login HTTP/1.1" 200 597 "-" "PostmanRuntime/7.43.3"
+2025-04-10 13:58:03 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 13:58:03 [INFO]: ::1 - - [10/Apr/2025:08:28:03 +0000] "POST /api/users/login HTTP/1.1" 200 597 "-" "PostmanRuntime/7.43.3"
+2025-04-10 13:59:54 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 13:59:54 [INFO]: ::1 - - [10/Apr/2025:08:29:54 +0000] "POST /api/users/login HTTP/1.1" 200 597 "-" "PostmanRuntime/7.43.3"
+2025-04-10 14:17:32 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 14:17:32 [INFO]: ::1 - - [10/Apr/2025:08:47:32 +0000] "POST /api/users/login HTTP/1.1" 200 597 "-" "PostmanRuntime/7.43.3"
+2025-04-10 14:18:54 [INFO]: Login:User logged In Successfully with june8894@gmail.com
+2025-04-10 14:18:54 [INFO]: ::1 - - [10/Apr/2025:08:48:54 +0000] "POST /api/users/login HTTP/1.1" 200 597 "-" "PostmanRuntime/7.43.3"
