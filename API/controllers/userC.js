@@ -2,7 +2,7 @@ import User from "../models/userM.js";
 import jwt from "jsonwebtoken";
 
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "30d" });
+  return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "5m" });
 };
 
 export const registerUser = async (req, res) => {
@@ -53,9 +53,11 @@ export const registerUser = async (req, res) => {
 };
 
 export const getUser = async (req, res) => {
-  const { email, phone } = req.body;
+  // const { email, phone } = req.body;
   try {
-    const user = await User.findOne({ $or: [{ email }, { phone }] });
+    // const user = await User.findOne({ $or: [{ email }, { phone }] });
+    // console.log(req.user._id);
+    const user = await User.findOne(req.user._id);
     if (!user) {
       return res.status(400).json({ message: `User doesn't exists` });
     }
@@ -67,14 +69,12 @@ export const getUser = async (req, res) => {
 };
 
 export const logIn = async (req, res) => {
-  console.log("Logged In started");
   const { email, phone, password } = req.body;
   if ((!email && !phone) || !password) {
     return res
       .status(400)
       .json({ message: "Email/Phone and Password is required" });
   }
-  console.log("All fields are provided");
   try {
     const user = await User.findOne({ $or: [{ email }, { phone }] }).select(
       "+password"
@@ -84,7 +84,7 @@ export const logIn = async (req, res) => {
       return res.status(401).json({ message: "Invalid Credentials" });
     }
     const isMatch = await user.matchPassword(password);
-    console.log(isMatch);
+    // console.log(isMatch);
     if (!isMatch) {
       return res.status(401).json({ message: "Password Doesn't Match" });
     }
@@ -103,9 +103,10 @@ export const logIn = async (req, res) => {
 };
 
 export const updateUser = async (req, res) => {
-  const { name, email, phone, password } = req.body;
+  // const { name, email, phone, password } = req.body;
   try {
-    const user = await User.findOne({ $or: [{ email }, { phone }] });
+    // const user = await User.findOne({ $or: [{ email }, { phone }] });
+    const user = await User.findOne(req.user._id);
     if (user) {
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
@@ -128,16 +129,28 @@ export const updateUser = async (req, res) => {
   }
 };
 export const deleteUser = async (req, res) => {
-  const { email, phone } = req.body;
+  const targetID = req.body.userID || req.user._id;
+  // const { email, phone } = req.body;
   try {
-    const user = await User.findOne({ $or: [{ email }, { phone }] });
+    // const user = await User.findOne({ $or: [{ email }, { phone }] });
+    // const user = await User.findOne(req.user._id);
+    // if (!user) {
+    //   return res.status(400).json({ message: "User not found" });
+    // }
+    // // Soft Delete recommended for production
+    // user.isActive = false;
+    // Hard delete
+
+    if (targetID !== "admin" && targetID !== req.user._id) {
+      return res
+        .status(403)
+        .json({ message: "Not authorized to delete other users" });
+    }
+    const user = await User.findByIdAndDelete(targetID);
     if (!user) {
       return res.status(400).json({ message: "User not found" });
     }
-    // Soft Delete recommended for production
-    user.isActive = false;
-    await user.save();
-    return res.status(200).json("User deleted Successfully");
+    return res.json({ message: "User deleted Successfully" });
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
