@@ -52,12 +52,12 @@ export const registerUser = async (req, res) => {
   }
 };
 
-export const getUser = async (req, res) => {
+export const getUsers = async (req, res) => {
   // const { email, phone } = req.body;
   try {
     // const user = await User.findOne({ $or: [{ email }, { phone }] });
     // console.log(req.user._id);
-    const user = await User.findOne(req.user._id);
+    const user = await User.find({});
     if (!user) {
       return res.status(400).json({ message: `User doesn't exists` });
     }
@@ -65,6 +65,28 @@ export const getUser = async (req, res) => {
   } catch (error) {
     console.error(`Server Error:${error.message}`);
     res.status(500).json({ message: error.message });
+  }
+};
+
+// Get a single user by ID and Admin can also access User
+export const getUser = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const user = await User.findById(id).select("-password -__v");
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+    const isOwner = req.user._id.toString() === id;
+    const isAdmin = req.user.role === "admin";
+    if (!isOwner && !isAdmin) {
+      return res
+        .status(403)
+        .json({ message: "Not Authorised to access this user" });
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ message: "Server Error" });
   }
 };
 
@@ -104,9 +126,15 @@ export const logIn = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   // const { name, email, phone, password } = req.body;
+  const { id } = req.params;
   try {
     // const user = await User.findOne({ $or: [{ email }, { phone }] });
-    const user = await User.findOne(req.user._id);
+    const user = await User.findById(id);
+    const isOwner = req.user._id.toString() == id;
+    const isAdmin = req.user.role === "admin";
+    if (!isAdmin && !isOwner) {
+      return res.status(403).json("Not authorized to access other user");
+    }
     if (user) {
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;

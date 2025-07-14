@@ -3,7 +3,6 @@ import { config } from "dotenv";
 config({ debug: false });
 import { connectDB } from "./config/connect.js";
 import userRoute from "./routes/userR.js";
-import { createAdmin } from "./utils/createAdmin.js";
 
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -17,7 +16,6 @@ app.use("/api/users", userRoute);
 const start = async () => {
   try {
     await connectDB();
-    await createAdmin();
     app.listen(PORT, () => {
       console.log(`Server is running successfully at PORT ${PORT}`);
     });
