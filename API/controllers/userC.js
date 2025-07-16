@@ -101,7 +101,7 @@ export const logIn = async (req, res) => {
     const user = await User.findOne({ $or: [{ email }, { phone }] }).select(
       "+password"
     );
-    console.log(user);
+    // console.log(user);
     if (!user) {
       return res.status(401).json({ message: "Invalid Credentials" });
     }
@@ -157,29 +157,21 @@ export const updateUser = async (req, res) => {
   }
 };
 export const deleteUser = async (req, res) => {
-  const targetID = req.body.userID || req.user._id;
-  // const { email, phone } = req.body;
+  const { id } = req.params;
+  const isOwner = req.user._id === id;
+  const isAmdin = req.user.role === "admin";
   try {
-    // const user = await User.findOne({ $or: [{ email }, { phone }] });
-    // const user = await User.findOne(req.user._id);
-    // if (!user) {
-    //   return res.status(400).json({ message: "User not found" });
-    // }
-    // // Soft Delete recommended for production
-    // user.isActive = false;
-    // Hard delete
-
-    if (targetID !== "admin" && targetID !== req.user._id) {
+    if (!isOwner && !isAmdin) {
       return res
         .status(403)
-        .json({ message: "Not authorized to delete other users" });
+        .json({ error: "Forbiddon: can not access other user" });
     }
-    const user = await User.findByIdAndDelete(targetID);
+    const user = await User.findByIdAndDelete(id);
     if (!user) {
-      return res.status(400).json({ message: "User not found" });
+      return res.status(400).json({ error: "User Not Found" });
     }
-    return res.json({ message: "User deleted Successfully" });
+    return res.status(200).json({ message: "User Deleted Successfully" });
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: "Server Error" });
   }
 };
