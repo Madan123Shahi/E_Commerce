@@ -82,7 +82,7 @@ export const EmailRegistration = async (req, res) => {
   const { email } = req.body;
   if (!email) return res.status(400).json({ error: "Email Field is required" });
   try {
-    const user = await User.findOne(email);
+    const user = await User.findOne({ email });
     if (user)
       return res
         .status(400)
@@ -95,5 +95,19 @@ export const EmailRegistration = async (req, res) => {
       .json({ message: "Token Generated Successfully", token, otp });
   } catch (error) {
     console.error(error.message);
+    return res
+      .status(500)
+      .json({ error: `Registration Error:${error.message}` });
   }
+};
+
+export const VerifyEOTP = async (req, res) => {
+  const { otp, token } = req.body;
+  if (!otp || !token)
+    return res.status(400).json({ error: "All fields are required" });
+  const decoded = await verifyToken(token);
+  if (decoded.purpose !== "Email_Verification")
+    return res.status(400).json({ error: "Invalid Token Purpose" });
+  if (decoded.otp !== otp)
+    return res.status(400).json({ error: "Invalid OTP" });
 };
