@@ -26,6 +26,10 @@ const otpSchema = new mongoose.Schema(
         message: (props) => `${props.value} is not a valid email`,
       },
     },
+    fullName: {
+      type: String,
+      trim: true,
+    },
     phoneVerified: {
       type: Boolean,
       default: false,

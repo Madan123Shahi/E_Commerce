@@ -51,12 +51,12 @@ export const verifyOTP = async (req, res) => {
     if (decoded.otp !== otp) {
       return res.status(400).json({ error: "Invalid OTP" });
     }
-    console.log(decoded.otp);
+    // console.log(decoded.otp);
     const newUser = await User.create({
       phone: decoded.phone,
       phoneVerified: true,
     });
-    console.log(newUser);
+    // console.log(newUser);
     // New authtoken for authorization
     const authToken = generateToken(
       {
@@ -105,9 +105,34 @@ export const VerifyEOTP = async (req, res) => {
   const { otp, token } = req.body;
   if (!otp || !token)
     return res.status(400).json({ error: "All fields are required" });
-  const decoded = await verifyToken(token);
-  if (decoded.purpose !== "Email_Verification")
-    return res.status(400).json({ error: "Invalid Token Purpose" });
-  if (decoded.otp !== otp)
-    return res.status(400).json({ error: "Invalid OTP" });
+  try {
+    const decoded = await verifyToken(token);
+    if (decoded.purpose !== "Email_Verification")
+      return res.status(400).json({ error: "Invalid Token Purpose" });
+    if (decoded.otp !== otp)
+      return res.status(400).json({ error: "Invalid OTP" });
+    const newUser = await User.create({
+      email: decoded.email,
+      emailVerified: true,
+    });
+    console.log(newUser);
+    // Token for authorization
+    const authToken = generateToken(
+      {
+        userID: newUser._id,
+        purpose: "Authentication",
+      },
+      "7d"
+    );
+    return res.status(200).json({
+      message: "Email Registered Successfully",
+      user: { email: newUser.email, id: newUser._id },
+      token: authToken,
+    });
+  } catch (error) {
+    console.error(`Verification Error:${error.message}`);
+    return res
+      .status(500)
+      .json({ error: `Verification Error:${error.message}` });
+  }
 };
